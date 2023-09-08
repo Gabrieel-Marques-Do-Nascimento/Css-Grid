@@ -33,7 +33,7 @@
                     grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
 
                     grid-template-rows: 100px 100px 100px; /*define autura das linhas especificadas no codigo*/
-                    grid-auto-rows: 80px; /*define autura das linhas automaticament no codigo*/
+                    grid-auto-rows: 100px; /*define autura das linhas automaticament no codigo*/
 
                     /*grid implicita 
                     grid explicita  */
@@ -68,9 +68,22 @@
             <h1> Css grid Exemple 3 ( <abbr title="fracão">FR</abbr> )</h1>
            <style>
              div.DivFr{
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr ;
-                grid-auto-rows: 200px;
+                
+                display: grid; /*Organizado em grade*/
+                    grid-template-columns:  1fr 1fr 1fr;/* define largura da coluna*/
+                             /*repeate(numero de epeticao , valor a repetir)*/
+                             /*outro valor e o minmax( valor minimo , valor maximo)*/
+
+                    grid-column-gap: 20px;  /* espaco entre Lolunas*/
+                    grid-row-gap: 20px;   /* espaco entre Linhas*/
+                    grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
+
+                    grid-template-rows: 100px 100px 100px; /*define autura das linhas especificadas no codigo*/
+                    grid-auto-rows: 200px; /*define autura das linhas automaticament no codigo*/
+
+                    /*grid implicita 
+                    grid explicita  */
+              
              }   
            </style>
             <div class="wrapper" id="DivFr">
