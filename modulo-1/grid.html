@@ -4,10 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminologia </title>
-</head>
-<body> 
-    <h1></h1>
-    <img src="../README/image (78).png" alt="">
+</head>   
+<body>   
+    <main>
+        <div>
+            <h1> Css grid Exemple 1</h1>
+            <img src="../README/image (78).png" alt="">
+
+
+        </div>
+
+
+        <div id="exemplo">
+            <style>
+                .wrapper{
+                    display: grid; /*Organizado em grade*/
+                    grid-template-columns: repeat(3,100px);/* define largura da coluna*/
+                             /*repeate(numero de epeticao , valor a repetir)*/
+                             /*outro valor e o minmax( valor minimo , valor maximo)*/
+
+                    grid-column-gap: 20px;  /* espaco entre Lolunas*/
+                    grid-row-gap: 20px;   /* espaco entre Linhas*/
+                    grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
+
+                    grid-template-rows: 100px 100px 100px; /*define autura das linhas especificadas no codigo*/
+                    grid-auto-rows: 80px; /*define autura das linhas automaticament no codigo*/
+
+                    /*grid implicita 
+                    grid explicita  */
+              
+
+                }
+                .wrapper div{
+                    background-color: royalblue;
+                    padding: 16px;
+                }
+                .wrapper :nth-child(even){
+               background-color: aquamarine;
+                }
+            </style>
+             <h1> Css grid Exemple 2</h1>
           
-</body>    
+             <div class="wrapper">
+                <div class="item">1</div>
+                <div class="item"> 2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+             </div>
+           
+
+
+
+
+
+        </div>
+    </main>
+        
+    
+
+</body>     
 </html>                    
