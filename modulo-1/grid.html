@@ -65,28 +65,86 @@
                 <div class="item">8</div>
              </div>
            <div>
-            <h1> Css grid Exemple 3 ( <abbr title="fracão">FR</abbr> )</h1>
+            <h1> Css grid Responsivo  ( <abbr title="fracão">FR</abbr> )</h1>
            <style>
-             div.DivFr{
+             div#DivFr{
                 
                 display: grid; /*Organizado em grade*/
-                    grid-template-columns:  1fr 1fr 1fr;/* define largura da coluna*/
+                    grid-template-columns: repeat(4, 1fr);/* define largura da coluna*/
                              /*repeate(numero de epeticao , valor a repetir)*/
                              /*outro valor e o minmax( valor minimo , valor maximo)*/
+                             /* fr determina 1 fracao do espaco e da mais responsividade*/
+                             /*recomendado quando nao vai se trabalhar com tamanho fixos usar fr*/
 
                     grid-column-gap: 20px;  /* espaco entre Lolunas*/
                     grid-row-gap: 20px;   /* espaco entre Linhas*/
                     grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
 
-                    grid-template-rows: 100px 100px 100px; /*define autura das linhas especificadas no codigo*/
+                    grid-template-rows: 200px 100px 100px; /*define autura das linhas especificadas no codigo*/
                     grid-auto-rows: 200px; /*define autura das linhas automaticament no codigo*/
 
                     /*grid implicita 
                     grid explicita  */
               
              }   
+             .wrapper div{
+                    background-color: royalblue;
+                    padding: 16px;
+                }
+                .wrapper :nth-child(even){
+               background-color: aquamarine;
+                }
            </style>
             <div class="wrapper" id="DivFr">
+                <div class="item">1</div>
+                <div class="item"> 2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+             </div>
+           </div>
+
+           <div>
+            <h1> Css grid Align-conteudo ( <abbr title="fracão">FR</abbr> )</h1>
+           <style>
+             div#aling{
+                
+                display: grid; /*Organizado em grade*/
+                    grid-template-columns: repeat(3, 1fr);
+                          
+                    grid-column-gap: 20px;  /* espaco entre Lolunas*/
+                    grid-row-gap: 20px;   /* espaco entre Linhas*/
+                    grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
+
+                    grid-auto-rows: 200px; /*define autura das linhas especificadas no codigo*/
+                 
+
+                 /* align-items: start; start = verticla no inicio // center e end stretch = padrão
+                  */
+                 /*  justify-items: center; stretch = padrão */
+
+                
+
+                 
+             }   
+             .wrapper div{
+                    background-color: royalblue;
+                    padding: 16px;
+                }
+                .wrapper :nth-child(even){
+                    align-self: center; /*mesmo conportamento de align-itens funciona para um item especificio*/
+                    justify-self: start;
+               background-color: aquamarine;
+                }
+           </style>
+            <div class="wrapper" id="aling">
                 <div class="item">1</div>
                 <div class="item"> 2</div>
                 <div class="item">3</div>
