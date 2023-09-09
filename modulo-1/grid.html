@@ -1,266 +1,380 @@
-                <!DOCTYPE html>
-                <html lang="pt-br">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Terminologia </title>
-                    <style>
-                        html{
-                            scroll-behavior: smooth;  /* Rolagem suave*/
-                            scroll-padding-top: 90px; /* cabecalho fixo nao quer ele porsima da seção*/
-                        }
-                        h1{
-                            text-align: center;
-                        }
-                        header{
-                        position: fixed; 
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Terminologia </title>
+            <style>
+                html{
+                    scroll-behavior: smooth;  /* Rolagem suave*/
+                    scroll-padding-top: 90px; /* cabecalho fixo nao quer ele porsima da seção*/
+                }
+                h1{
+                    text-align: center;
+                }
+                header{
+                position: fixed; 
 
+                }
+            </style>
+        </head>   
+        <body>   
+            <header>
+        <nav>
+                <a href="#suave" >Suave</a>
+            </nav>
+            </header>
+        
+            <main>
+                <div>
+                    <h1> Css grid Exemple 1</h1>
+                    <img src="../README/image (78).png" alt="">
+
+
+                </div>
+
+
+                <div id="exemplo">
+                    <style>
+                        .wrapper{
+                            display: grid; /*Organizado em grade*/
+                            grid-template-columns: repeat(3,100px);/* define largura da coluna*/
+                                    /*repeate(numero de epeticao , valor a repetir)*/
+                                    /*outro valor e o minmax( valor minimo , valor maximo)*/
+
+                            grid-column-gap: 20px;  /* espaco entre Lolunas*/
+                            grid-row-gap: 20px;   /* espaco entre Linhas*/
+                            grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
+
+                            grid-template-rows: 100px 100px 100px; /*define autura das linhas especificadas no codigo*/
+                            grid-auto-rows: 100px; /*define autura das linhas automaticament no codigo*/
+
+                            /*grid implicita 
+                            grid explicita  */
+                    
+
+                        }
+                        .wrapper div{
+                            background-color: royalblue;
+                            padding: 16px;
+                        }
+                        .wrapper :nth-child(even){
+                    background-color: aquamarine;
                         }
                     </style>
-                </head>   
-                <body>   
-                    <header>
-                <nav>
-                        <a href="#suave" >Suave</a>
-                    </nav>
-                    </header>
+                    <h1> Css grid Exemple 2</h1>
                 
-                    <main>
-                        <div>
-                            <h1> Css grid Exemple 1</h1>
-                            <img src="../README/image (78).png" alt="">
-
-
-                        </div>
-
-
-                        <div id="exemplo">
-                            <style>
-                                .wrapper{
-                                    display: grid; /*Organizado em grade*/
-                                    grid-template-columns: repeat(3,100px);/* define largura da coluna*/
-                                            /*repeate(numero de epeticao , valor a repetir)*/
-                                            /*outro valor e o minmax( valor minimo , valor maximo)*/
-
-                                    grid-column-gap: 20px;  /* espaco entre Lolunas*/
-                                    grid-row-gap: 20px;   /* espaco entre Linhas*/
-                                    grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
-
-                                    grid-template-rows: 100px 100px 100px; /*define autura das linhas especificadas no codigo*/
-                                    grid-auto-rows: 100px; /*define autura das linhas automaticament no codigo*/
-
-                                    /*grid implicita 
-                                    grid explicita  */
-                            
-
-                                }
-                                .wrapper div{
-                                    background-color: royalblue;
-                                    padding: 16px;
-                                }
-                                .wrapper :nth-child(even){
-                            background-color: aquamarine;
-                                }
-                            </style>
-                            <h1> Css grid Exemple 2</h1>
+                    <div class="wrapper">
+                        <div class="item">1</div>
+                        <div class="item"> 2</div>
+                        <div class="item">3</div>
+                        <div class="item">4</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                    </div>
+                <div>
+                    <h1> Css grid Responsivo  ( <abbr title="fracão">FR</abbr> )</h1>
+                <style>
+                    div#DivFr{
                         
-                            <div class="wrapper">
-                                <div class="item">1</div>
-                                <div class="item"> 2</div>
-                                <div class="item">3</div>
-                                <div class="item">4</div>
-                                <div class="item">5</div>
-                                <div class="item">6</div>
-                                <div class="item">7</div>
-                                <div class="item">8</div>
-                                <div class="item">5</div>
-                                <div class="item">6</div>
-                                <div class="item">7</div>
-                                <div class="item">8</div>
-                            </div>
-                        <div>
-                            <h1> Css grid Responsivo  ( <abbr title="fracão">FR</abbr> )</h1>
-                        <style>
-                            div#DivFr{
+                        display: grid; /*Organizado em grade*/
+                            grid-template-columns: repeat(4, 1fr);/* define largura da coluna*/
+                                    /*repeate(numero de epeticao , valor a repetir)*/
+                                    /*outro valor e o minmax( valor minimo , valor maximo)*/
+                                    /* fr determina 1 fracao do espaco e da mais responsividade*/
+                                    /*recomendado quando nao vai se trabalhar com tamanho fixos usar fr*/
+
+                            grid-column-gap: 20px;  /* espaco entre Lolunas*/
+                            grid-row-gap: 20px;   /* espaco entre Linhas*/
+                            grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
+
+                            grid-template-rows: 200px 100px 100px; /*define autura das linhas especificadas no codigo*/
+                            grid-auto-rows: 200px; /*define autura das linhas automaticament no codigo*/
+
+                            /*grid implicita 
+                            grid explicita  */
+                    
+                    }   
+                    #DivFr div{
+                            background-color: royalblue;
+                            padding: 16px;
+                        }
+                        #DivFr :nth-child(even){
+                    background-color: aquamarine;
+                        }
+                </style>
+                    <div class="" id="DivFr">
+                        <div class="item">1</div>
+                        <div class="item"> 2</div>
+                        <div class="item">3</div>
+                        <div class="item">4</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h1> Css grid Align-conteudo ( <abbr title="fracão">FR</abbr> )</h1>
+                <style>
+                    div#aling{
+                        
+                        display: grid; /*Organizado em grade*/
+                            grid-template-columns: repeat(3, 1fr);
                                 
-                                display: grid; /*Organizado em grade*/
-                                    grid-template-columns: repeat(4, 1fr);/* define largura da coluna*/
-                                            /*repeate(numero de epeticao , valor a repetir)*/
-                                            /*outro valor e o minmax( valor minimo , valor maximo)*/
-                                            /* fr determina 1 fracao do espaco e da mais responsividade*/
-                                            /*recomendado quando nao vai se trabalhar com tamanho fixos usar fr*/
+                            grid-column-gap: 20px;  /* espaco entre Lolunas*/
+                            grid-row-gap: 20px;   /* espaco entre Linhas*/
+                            grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
 
-                                    grid-column-gap: 20px;  /* espaco entre Lolunas*/
-                                    grid-row-gap: 20px;   /* espaco entre Linhas*/
-                                    grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
+                            grid-auto-rows: 200px; /*define autura das linhas especificadas no codigo*/
+                        
 
-                                    grid-template-rows: 200px 100px 100px; /*define autura das linhas especificadas no codigo*/
-                                    grid-auto-rows: 200px; /*define autura das linhas automaticament no codigo*/
+                        /* align-items: start; start = verticla no inicio // center e end stretch = padrão
+                        */
+                        /*  justify-items: center; stretch = padrão */
 
-                                    /*grid implicita 
-                                    grid explicita  */
+                        
+
+                        
+                    }   
+                    #aling div{
+                            background-color: royalblue;
+                            padding: 16px;
+                        }
+                        #aling :nth-child(even){
+                            align-self: center; /*mesmo conportamento de align-itens funciona para um item especificio*/
+                            justify-self: start;
+                    background-color: aquamarine;
+                        }
+                </style>
+                    <div class="" id="aling">
+                        <div class="item">1</div>
+                        <div class="item"> 2</div>
+                        <div class="item">3</div>
+                        <div class="item">4</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                    </div>
+                </div>
+                <h1 id="suave">Rolagen suave</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nobis esse hic ullam sapiente, quibusdam necessitatibus tempora dolore cupiditate sequi saepe laboriosam eum at, nisi cum accusantium. Recusandae, similique dignissimos?</p>
+
+                    <h1>Ocupando Espaços com (css grid)</h1>
+                    <style>
+                        div#espaco{
+                        /* aproveitar ao max do espaço*/
+
+                        display: grid; 
+                            grid-template-columns: repeat(5, 1fr);
+                            grid-template-rows: repeat(3, minmax(200px, auto));
+                            /* minmax = autura minima , autura maxima*/
+                            grid-gap: 1rem;
+
                             
-                            }   
-                            .wrapper div{
-                                    background-color: royalblue;
-                                    padding: 16px;
-                                }
-                                .wrapper :nth-child(even){
-                            background-color: aquamarine;
-                                }
-                        </style>
-                            <div class="wrapper" id="DivFr">
-                                <div class="item">1</div>
-                                <div class="item"> 2</div>
-                                <div class="item">3</div>
-                                <div class="item">4</div>
-                                <div class="item">5</div>
-                                <div class="item">6</div>
-                                <div class="item">7</div>
-                                <div class="item">8</div>
-                                <div class="item">5</div>
-                                <div class="item">6</div>
-                                <div class="item">7</div>
-                                <div class="item">8</div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h1> Css grid Align-conteudo ( <abbr title="fracão">FR</abbr> )</h1>
-                        <style>
-                            div#aling{
-                                
-                                display: grid; /*Organizado em grade*/
-                                    grid-template-columns: repeat(3, 1fr);
-                                        
-                                    grid-column-gap: 20px;  /* espaco entre Lolunas*/
-                                    grid-row-gap: 20px;   /* espaco entre Linhas*/
-                                    grid-gap: 20px; /*define espaco entre as Colunas e Linhas*/
-
-                                    grid-auto-rows: 200px; /*define autura das linhas especificadas no codigo*/
-                                
-
-                                /* align-items: start; start = verticla no inicio // center e end stretch = padrão
-                                */
-                                /*  justify-items: center; stretch = padrão */
-
-                                
-
-                                
-                            }   
-                            .wrapper div{
-                                    background-color: royalblue;
-                                    padding: 16px;
-                                }
-                                .wrapper :nth-child(even){
-                                    align-self: center; /*mesmo conportamento de align-itens funciona para um item especificio*/
-                                    justify-self: start;
-                            background-color: aquamarine;
-                                }
-                        </style>
-                            <div class="wrapper" id="aling">
-                                <div class="item">1</div>
-                                <div class="item"> 2</div>
-                                <div class="item">3</div>
-                                <div class="item">4</div>
-                                <div class="item">5</div>
-                                <div class="item">6</div>
-                                <div class="item">7</div>
-                                <div class="item">8</div>
-                                <div class="item">5</div>
-                                <div class="item">6</div>
-                                <div class="item">7</div>
-                                <div class="item">8</div>
-                            </div>
-                        </div>
-                        <h1 id="suave">Rolagen suave</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nobis esse hic ullam sapiente, quibusdam necessitatibus tempora dolore cupiditate sequi saepe laboriosam eum at, nisi cum accusantium. Recusandae, similique dignissimos?</p>
-
-                            <h1>Ocupando Espaços com (css grid)</h1>
-                            <style>
-                                div#espaco{
-                                /* aproveitar ao max do espaço*/
-
-                                display: grid; 
-                                 grid-template-columns: repeat(5, 1fr);
-                                 grid-template-rows: repeat(3, minmax(200px, auto));
-                                 /* minmax = autura minima , autura maxima*/
-                                 grid-gap: 1rem;
-
-                                  
-                                }   
-                                #espaco > div:nth-child(1){
-                                   
-                                 /*   grid-column-start: 1; indica onde esse elento vai comecar    ex: coluna 1
-                                    grid-column-end: 3; /*indica onde esse elento vai terminar  ex: coluna 3
-                                    grid-column: 1/3; /*abreviador dos elentos assima */
-                                   
+                        }   
+                        #espaco > div:nth-child(1){
+                            
+                            /*   grid-column-start: 1; indica onde esse elento vai comecar    ex: coluna 1
+                            grid-column-end: 3; /*indica onde esse elento vai terminar  ex: coluna 3
+                            grid-column: 1/3; /*abreviador dos elentos assima */
+                            
 grid-column: 1/-1; /*vai da coluna 1 ate a ultima = -1 */
-                                }
-                                #espaco > div:nth-child(2){
-                
-                                 
+height: 400px;
+                        }
+                        #espaco > div:nth-child(2){
+        
+                            
 grid-column: 1; /*fora do exemplo */
-                                }
-                                #espaco > div:nth-child(3){
-                
-                                grid-column: 2/-1; /*vai da coluna 1 ate a ultima coluna = -1 */
-  grid-column: 2/5; /*fora do exemplo */                               
-            }
-                                #espaco > div{
-                                    background-color: rgb(28, 60, 155);
-                                    padding: 1rem;
-                                    font-size: 2rem;
+                        }
+                        #espaco > div:nth-child(3){
+        
+                        grid-column: 2/-1; /*vai da coluna 1 ate a ultima coluna = -1 */
+grid-column: 2/5; /*fora do exemplo */                               
+    }
+                        #espaco > div{
+                            background-color: rgb(28, 60, 155);
+                            padding: 1rem;
+                            font-size: 2rem;
 
-                                }
+                        }
 
-                                #espaco :nth-child(even){
-                                    
-                                background-color: aquamarine;
-                                }
-                            </style>
-                            <div class="" id="espaco">
-                                <div class="item">1</div>
-                                <div class="item"> 2</div>
-                                <div class="item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias eaque officia, laboriosam sint quia cum dolorem, esse quibusdam optio quam voluptate accusantium temporibus inventore debitis cupiditate nemo molestiae! Eveniet, dolorum!
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit, aut deleniti facere voluptate sapiente tenetur quos ad minus dicta quaerat natus tempora aliquid aspernatur ea nostrum porro incidunt. Saepe.
-                                </div>
-                                <div class="item">4</div>
-                                <div class="item">5</div>
-                                <div class="item">6</div>
-                                <div class="item">7</div>
-                                <div class="item">8</div>
-                                <div class="item">5</div>
-                                <div class="item">6</div>
-                                <div class="item">7</div>
-                                <div class="item">8</div>
-                                </div>
-                            </div>
-
-
-
-                                <h1>Sobreposição de conteudo (css grid)</h1> 
-                            <style>
-                              
-                                </style>
-                                <div class="" id="">
-                                    <div class="item">1</div>
-                                    <div class="item"> 2</div>
-                                    <div class="item">3</div>
-                                    <div class="item">4</div>
-                                    <div class="item">5</div>
-                                    <div class="item">6</div>
-                                    <div class="item">7</div>
-                                    <div class="item">8</div>
-                                    <div class="item">5</div>
-                                    <div class="item">6</div>
-                                    <div class="item">7</div>
-                                    <div class="item">8</div>
-                                </div>
+                        #espaco :nth-child(even){
+                            
+                        background-color: aquamarine;
+                        }
+                    </style>
+                    <div class="" id="espaco">
+                        <div class="item">1</div>
+                        <div class="item"> 2</div>
+                        <div class="item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias eaque officia, laboriosam sint quia cum dolorem, esse quibusdam optio quam voluptate accusantium temporibus inventore debitis cupiditate nemo molestiae! Eveniet, dolorum!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit, aut deleniti facere voluptate sapiente tenetur quos ad minus dicta quaerat natus tempora aliquid aspernatur ea nostrum porro incidunt. Saepe.
                         </div>
-                        <h1>Areas de grid (css grid)</h1>
+                        <div class="item">4</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                        </div>
+                    </div>
+
+
+                    <h1>Ocupando Espaços 2 com (css grid)</h1>
+                    <style>
+                        div#espaco2{
+                        /* aproveitar ao max do espaço*/
+
+                        display: grid; 
+                        @media (min-width:720px) {/*apartir de 700px vai de 1 cloluna para 5 colunas*/
+                            grid-template-columns: repeat(5, 1fr);
+                        }
+                            grid-template-columns: 1fr;
+                            /*se mudar de 5 colunas para so 1 elem 3 fica numa coluna indefinida or isso usa @media */
+
+                            grid-template-rows: repeat(3, minmax(100px, auto));
+                            /* minmax = autura minima , autura maxima*/
+                            grid-gap: 1rem;
+
+                            
+                        }   
+                        #espaco2 > div:nth-child(1){
+                            
+                            /*   grid-column-start: 1; indica onde esse elento vai comecar    ex: coluna 1
+                            grid-column-end: 3; /*indica onde esse elento vai terminar  ex: coluna 3
+                            grid-column: 1/3; /*abreviador dos elentos assima */
+                            
+grid-column: 1/-1; /*vai da coluna 1 ate a ultima = -1 */
+height: 400px;
+                        }
+                        #espaco2 > div:nth-child(2){
+        
+                            
+grid-column: 1; /*fora do exemplo */
+                        }
+                        #espaco2 > div:nth-child(3){
+        
+                       /* grid-column: 2/-1; // vai da coluna 1 ate a ultima coluna = -1 */
+            @media (min-width:720px) {/*apartir de 700px grid column sera ultilizado*/
+                 grid-column: 2/5;
+            }
+                         
+    }
+                        #espaco2 > div{
+                            background-color: rgb(28, 60, 155);
+                            padding: 1rem;
+                            font-size: 2rem;
+
+                        }
+                        #espaco2 :nth-child(5){
+                            grid-column: 1/-1;
+                        }
+                        #espaco2{
+                            color: white;
+                        }
+
+                        #espaco2 :nth-child(even){
+                         color: black;
+                        background-color: aquamarine;
+                        }
+                    </style>
+                    <div class="" id="espaco2">
+                        <div class="item">1</div>
+                        <div class="item"> 2</div>
+                        <div class="item">3
+                        </div>
+                        <div class="item">4</div>
+                        <div class="item">5</div>
+                       
+                       
+                        </div>
+                    </div>
+
+
+
+                        <h1>Sobreposição de conteudo (css grid)</h1> 
+                    <style>
+                       #Sobreposição{
+                        display: grid;
+                        grid-template-columns: repeat(5,1fr);
+                       }
+                        </style>
+                        <div class="" id="Sobreposição">
+                            <div class="item">1</div>
+                            <div class="item"> 2</div>
+                            <div class="item">3</div>
+                            <div class="item">4</div>
+                            <div class="item">5</div>
+                            <div class="item">6</div>
+                            <div class="item">7</div>
+                            <div class="item">8</div>
+                            <div class="item">5</div>
+                            <div class="item">6</div>
+                            <div class="item">7</div>
+                            <div class="item">8</div>
+                        </div>
+                </div>
+                <h1>Areas de grid (css grid)</h1>
+                <style>
+                    
+                </style>
+                <div class="" id="">
+                    <div class="item">1</div>
+                    <div class="item"> 2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    </div>
+
+
+                    <h1>auto-fill e auto-fit (css grid)</h1>
+                    <style>
+                        
+                    </style>
+                    <div class="" id="">
+                        <div class="item">1</div>
+                        <div class="item"> 2</div>
+                        <div class="item">3</div>
+                        <div class="item">4</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                        </div>
+
+                        <h1>Nomes de linhas (Css Grid)</h1>
                         <style>
-                           
+                        
                         </style>
                         <div class="" id="">
                             <div class="item">1</div>
@@ -276,48 +390,9 @@ grid-column: 1; /*fora do exemplo */
                             <div class="item">7</div>
                             <div class="item">8</div>
                             </div>
+            </main>
+                
+            
 
-
-                            <h1>auto-fill e auto-fit (css grid)</h1>
-                            <style>
-                             
-                            </style>
-                            <div class="" id="">
-                                <div class="item">1</div>
-                                <div class="item"> 2</div>
-                                <div class="item">3</div>
-                                <div class="item">4</div>
-                                <div class="item">5</div>
-                                <div class="item">6</div>
-                                <div class="item">7</div>
-                                <div class="item">8</div>
-                                <div class="item">5</div>
-                                <div class="item">6</div>
-                                <div class="item">7</div>
-                                <div class="item">8</div>
-                                </div>
-
-                                <h1>Nomes de linhas (Css Grid)</h1>
-                                <style>
-                               
-                                </style>
-                                <div class="" id="">
-                                    <div class="item">1</div>
-                                    <div class="item"> 2</div>
-                                    <div class="item">3</div>
-                                    <div class="item">4</div>
-                                    <div class="item">5</div>
-                                    <div class="item">6</div>
-                                    <div class="item">7</div>
-                                    <div class="item">8</div>
-                                    <div class="item">5</div>
-                                    <div class="item">6</div>
-                                    <div class="item">7</div>
-                                    <div class="item">8</div>
-                                    </div>
-                    </main>
-                        
-                    
-
-                </body>     
-                </html>                    
+        </body>     
+        </html>                    
