@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminologia </title>
     <style>
+        html{
+            scroll-behavior: smooth;  /* Rolagem suave*/
+            scroll-padding-top: 90px; /* cabecalho fixo nao quer ele porsima da seção*/
+        }
         h1{
             text-align: center;
+        }
+        header{
+         position: fixed; 
+
         }
     </style>
 </head>   
 <body>   
+    <header>
+ <nav>
+        <a href="#suave" >Suave</a>
+    </nav>
+    </header>
+   
     <main>
         <div>
             <h1> Css grid Exemple 1</h1>
@@ -159,10 +173,55 @@
                 <div class="item">8</div>
              </div>
            </div>
+           <h1 id="suave">Rolagen suave</h1>
 
-
-
-
+            <h1>Ocupando Espaços com css grid</h1>
+            <style>
+                div#espaco{
+                   
+                   display: grid; 
+                       grid-template-columns: repeat(3, 1fr);
+                             
+                       grid-column-gap: 20px; 
+                       grid-row-gap: 20px;   
+                       grid-gap: 20px;
+   
+                       grid-auto-rows: 200px; 
+                    
+   
+                    /* align-items: start; start = verticla no inicio // center e end stretch = padrão
+                     */
+                    /*  justify-items: center; stretch = padrão */
+   
+                   
+   
+                    
+                }   
+                .wrapper div{
+                       background-color: royalblue;
+                       padding: 16px;
+                   }
+                   .wrapper :nth-child(even){
+                       align-self: center; /*mesmo conportamento de align-itens funciona para um item especificio*/
+                       justify-self: start;
+                  background-color: aquamarine;
+                   }
+              </style>
+               <div class="wrapper" id="espaco">
+                   <div class="item">1</div>
+                   <div class="item"> 2</div>
+                   <div class="item">3</div>
+                   <div class="item">4</div>
+                   <div class="item">5</div>
+                   <div class="item">6</div>
+                   <div class="item">7</div>
+                   <div class="item">8</div>
+                   <div class="item">5</div>
+                   <div class="item">6</div>
+                   <div class="item">7</div>
+                   <div class="item">8</div>
+                </div>
+              </div>
 
         </div>
     </main>
