@@ -1,0 +1,45 @@
+CTRL SHIFT  SETA = PARA SELECIONAR O TEXTO
+CTRL K + CTRL C = COMENTAR O codigo
+CTRL K + CTRL u =  REMOVER COMENTARIO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
