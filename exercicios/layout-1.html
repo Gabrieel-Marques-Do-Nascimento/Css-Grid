@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout na Pratica</title>
+</head>
+<style>
+
+.l-wrapper{
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    margin: 0 auto;
+    /* max-width: 1200px; */ /* remova  caso queira algum elemento com tamnha total*/
+    grid-template-areas: 
+    "header"
+    "main"
+    "sidebar"
+    "side-main"
+    "side-sec"
+    "footer"
+    ;
+   @media (min-width:48em) { /* 768px */
+    /* grid-template-columns: repeat(6, 1fr); */   /* remova  caso queira algum elemento com tamnha total*/
+    grid-template-columns: 1fr repeat(4, minmax(auto,200px)) 1fr;
+    grid-template-rows: .5fr 2fr .5fr .5fr;
+    grid-template-areas: /* ponto ' . '  add quando quiser um espaço no local*/
+    " header    header    header   header    header     header"
+    "   main           main        main              sidebar     . "
+    ".      side-main  side-main     side-sec    side-sec     . "
+    " footer    footer  footer     footer    footer      footer"
+    ;
+   }
+}
+
+  header{
+ background-color:aquamarine ;
+ grid-area: header;
+  }
+  main{
+    background-color: blue;
+    grid-area: main;
+  }
+  .l-sidebar{
+    background-color:  brown;
+    grid-area: sidebar;
+  }
+  .l-side-main{
+    background-color:burlywood ;
+    grid-area: side-main;
+}
+.l-side-sec{
+    background-color:  burlywood;
+    grid-area: side-sec;
+}
+.l-footer{
+    background-color: darkgreen;
+    grid-area: footer;
+}
+</style>
+<body>
+    <div class="l-wrapper">
+        <header class="l-header">
+
+        </header>
+        <main class="l-main">
+
+        </main>
+        <aside class="l-sidebar">
+
+        </aside>
+        <aside class="l-side-main">
+
+        </aside>
+        <aside class="l-side-sec">
+
+        </aside>
+        <footer class="l-footer">
+
+        </footer>
+    </div>
+</body>
+</html>

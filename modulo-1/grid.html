@@ -11,18 +11,21 @@
                 }
                 h1{
                     text-align: center;
+                    margin: 150px 0px 50px 0px;
                 }
+               
                header > nav {
                 position: fixed; 
                 background-color: black;
                 color: white;
                 width: 100vw;
-                padding: 0%;
-                margin-top: -22px;
+                padding: 10px;
+                top: -7px;
 
                 }
                 header > nav > a {
                     color: white;
+                    margin-right: 20px;
                 }
                 div > header{
                     display: block;
@@ -39,7 +42,7 @@
         
             <main>
                 <div>
-                    <h1> Css grid Exemple 1</h1>
+                    <h1 style="margin: 30px;"> Css grid Exemple 1</h1>
                     <img src="../README/image (78).png" alt="">
 
 
@@ -76,7 +79,7 @@
                     </style>
                     <h1> Css grid Exemple 2</h1>
                 
-                    <div class="wrapper">
+                    <div  class="wrapper">
                         <div class="item">1</div>
                         <div class="item"> 2</div>
                         <div class="item">3</div>
@@ -121,7 +124,7 @@
                     background-color: aquamarine;
                         }
                 </style>
-                    <div class="" id="DivFr">
+                    <div class="01" id="DivFr">
                         <div class="item">1</div>
                         <div class="item"> 2</div>
                         <div class="item">3</div>
@@ -501,13 +504,17 @@ grid-column: 1; /*fora do exemplo */
                         <style>
                            #linha{
                         display: grid;
-                        grid-template-columns: [site-start] repeat(5, 1fr)  [site-end];
-                        /* entre [ ]  da para definir nomes enves de numeros*/
+                     
+                        grid-template-columns: [site-start] 1fr repeat(4, 1fr)  [site-end] ;
+                        /* entre [ ]  da para definir nomes enves de numeros*/ 
+                          /* e posivel definir quantoss nomes neçessarios */
                         grid-auto-rows: 100px;
                         grid-gap: .5rem;
                        }
                        #linha > header , #linha footer{
-                        grid-column: site-start / site-end;
+                        /* grid-column: site-start / site-end; */
+                        grid-column: site; 
+                        /* ele entend q site representa os dois valores site-start, site-end */
                        }
                        #linha > *{
                             background-color: rgb(28, 60, 155);
@@ -529,6 +536,61 @@ grid-column: 1; /*fora do exemplo */
                       <aside>Aside</aside>
                       <footer>Footer</footer>
                     </div>
+ 
+
+
+
+
+                    <h1>Nomes de linhas 2 (Css Grid)</h1>
+                    <style>
+                       #linha2{
+                    display: grid;
+                 
+                    grid-template-columns: [site-start] 1fr [content-start] repeat(4, 1fr)  [site-end] ;
+                    grid-template-rows: [site-top site-init]  /* pode especifica mais de um nome */200px [content-top] 200px [content-bottom] 200px [site-bottom];
+                    grid-auto-rows: 100px;
+                    grid-gap: .5rem;
+                   }
+                   #linha2 > header , #linha2 footer{
+                  
+                    grid-column: site; 
+                   }
+                  #linha2 > main{
+                    grid-column: content;
+                   }
+                   #linha2 > aside{
+                    grid-column: site-start/ content-start;
+                    grid-row: content-top/ content-bottom;
+                   }
+                   #linha2 > *{
+                        background-color: rgb(28, 60, 155);
+                        padding: 1rem;
+                        font-size: 2rem;
+                   }
+                   #linha2 > *:nth-child(even){
+                     color: black;
+                    background-color: aquamarine;
+                    }
+            
+
+
+
+            </style>
+            <div class="" id="linha2">
+                  <header>Header</header>
+                  <main>Main</main>
+                  <aside>Aside</aside>
+                  <footer>Footer</footer>
+                </div>
+
+
+
+
+
+
+
+
+
 
             </main>
                 
