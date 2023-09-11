@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout 3</title>
+</head>
+
+<style>
+.l-article{
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 0% auto;
+  max-width: 1024px;
+  grid-template-areas: 
+  "title    title   title   title   title   title"
+  "meta     meta     meta   meta    meta    meta"
+  "copy1    copy1   copy1   copy1   copy1   copy1"
+  "copy2    copy2   copy2   copy2   copy2   copy2"
+  "media    media   media   media   media   media"
+  "aside    aside   aside   aside   aside   aside"
+                         ;
+}
+@media (min-width:30em) {
+    .l-article{
+        grid-template-areas: 
+  "meta     meta    title   title   title   title"
+  "copy1    copy1   copy1   copy1   copy1   copy1"
+  "copy2    copy2   copy2   copy2   copy2   copy2"
+  "media    media   media   media   media   media"
+  "aside    aside   aside   aside   aside   aside"
+                         ;
+}
+    }
+@media (min-width:60em) {
+    .l-article{
+        grid-template-areas: 
+        "meta     title   title   title   copy2   copy2"
+  "copy1    copy1   copy1   copy1   copy2   copy2 "
+  "copy1    copy1    copy1   copy1  copy2    copy2"
+  "media    media    media   media   media   media"
+  ".        .        .      .      aside     aside"
+                         ;
+}
+    }
+
+.l-article > * {
+    min-height: 100px;
+    padding: 1rem;
+}
+.l-article--title{
+    background-color: rgb(10, 22, 109);
+    grid-area: title;
+}
+.l-article--meta{
+    background-color: rgb(246, 152, 12);
+    grid-area: meta;
+}
+.l-article--copy1{
+    background-color: rgb(155, 118, 15);
+    grid-area: copy1;
+}
+.l-article--copy2{
+    background-color: rgb(110, 79, 138);
+    grid-area: copy2;
+}
+.l-article--media{
+    background-color: rgb(23, 75, 73);
+    grid-area: media;
+    margin: 0%;
+}
+.l-article--aside{          
+    background-color: rgb(255, 0, 0);
+    grid-area: aside;
+}
+</style>
+
+<body>
+    <article class="l-article">
+        <header class="l-article--title"></header>
+        <aside class="l-article--meta"></aside>
+        <section class="l-article--copy1"></section>
+        <section class="l-article--copy2"></section>
+        <figure class="l-article--media"></figure>
+        <asidev class="l-article--aside"></asidev>
+    </article>
+</body>
+</html>
