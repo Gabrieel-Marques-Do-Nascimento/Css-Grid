@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout css grid 2</title>
+</head>
+
+<style>
+@media (min-width:48em) { /*768px*/
+    .wrapper{
+display: grid;
+grid-auto-rows: 1fr;
+grid-gap: .5rem;
+grid-template-columns: [full-start] 1fr [container-start] repeat(6, 1fr) [container-end] 1fr [full-end];
+height: 100vh;
+}
+
+.wrapper > *{
+    padding: 1rem;
+    margin: .5rem 0;
+}
+}
+@media (min-width:48em) {
+    .wrapper > *{
+   grid-column: container ; /* fica centralizado*/
+    margin: 0;
+}
+}
+.l-header{
+background-color: aqua;
+margin-top: 0%;
+}
+.l-main{
+background-color: rgb(85, 190, 190);
+}
+.l-hero
+{
+    height: 250px;
+background-color: blue;
+}
+.l-aside{
+background-color: chartreuse;
+padding: 0%;
+}
+.l-footer{
+background-color: brown;
+margin-bottom: 0%;
+}
+.section{
+    display: grid;
+background-color: darkmagenta;
+grid-gap: .5rem;
+padding: 0px;
+
+}
+@media (min-width:48em) {
+    .section{
+   grid-template-columns:  repeat(auto-fit, minmax(150px , 1fr));
+   grid-auto-rows: 150px;
+
+}
+}
+.c-aside{
+    background-color: coral;
+    min-height: 100px;
+}
+.u-grif-full{
+    grid-column: full;
+}
+.expand-left{
+    grid-column: full / container;
+}
+</style>
+
+<body>
+
+   
+    <main class="wrapper">
+ <header class="l-header u-grif-full">
+
+    </header> 
+  <div class="l-hero">
+
+  </div>
+  <main class="l-main">
+
+  </main> 
+  <section class="section">
+        <aside class="c-aside">
+
+        </aside>
+        <aside class="c-aside">
+
+        </aside>
+        <aside class="c-aside">
+
+        </aside>
+        <aside class="c-aside">
+
+        </aside>
+        
+    </section>
+    <aside class="l-aside  expand-left">
+
+    </aside>
+   
+
+    <footer class="l-footer   u-grif-full">
+
+    </footer>
+    </main>
+
+   
+
+</body>
+</html>
